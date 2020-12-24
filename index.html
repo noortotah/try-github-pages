@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" placeholder="Enter Number" id="number">
+    <button onclick="displayMultipleTable()"> Find its Multiplication table </button>
+    <div id="multiplication-table">
+        Add Here
+    </div>
+
+    <style>
+        table, td {
+            border: 1px solid #eee;
+        }
+        td {
+            text-align: center;
+            padding: 5px;
+            font-size: 1rem;
+        }
+    </style>
+    <script>
+        
+        function displayMultipleTable(){
+            const num = document.getElementById('number').value;
+            if(num != "" && num !== undefined){
+                document.getElementById('multiplication-table').innerHTML = "";
+                let innerH = "<table>";
+                
+                    innerH += "<tr>";
+                for (let index = 0; index <= num; index++) {
+                    
+                    if(index) {
+                        innerH += "<td>"+ index + "</td>";
+                    }else{
+                        innerH += "<td></td>";
+                    }
+                    
+                }
+                innerH += "</tr>";
+                for (let index = 1; index <= 10; index++) {
+                    innerH += "<tr>";
+                    innerH +="<td>"+ index +"</td>"
+                   for (let j = 1; j <= num ; j++) {
+                        innerH += '<td>'
+                             + j + ' * ' + index + ' = ' 
+                            + j*index
+                            +'</td>';
+
+                   } 
+                   innerH += "<tr>"
+                   
+                }
+                innerH += '</table>';
+                document.getElementById('multiplication-table').innerHTML = innerH;
+
+            }
+            
+        }
+        
+
+
+        function DisplaySelectBox(){
+
+        }
+    </script>
+
+    </hr>
+
+
+    <style>
+        input {
+            display: table-row;
+            border: 1px solid #eee;
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 96.5%;
+        }
+        button {
+            padding: 16px;
+            display: inline-block;
+            border-radius: 0px;
+            border: 1px solid #eee;
+            min-width: 158px;
+            margin-bottom: 10px;
+        }
+
+        .blue-back {
+            background-color: lightblue;
+        }
+
+        .green-back {
+            background-color: limegreen;
+        }
+
+        .options-container, .add-select-container{
+            display: inline-grid;
+            position: relative;
+            width: 49%;
+        }
+
+        select {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border-radius: 0px;
+        }
+
+    </style>
+    <div class="select-homework">
+        <h1>Enter options</h1>
+        <div class="options-container">
+            <div id="select-homework-options">
+                <input type="text" class="list-options" value="" placeholder="enter value here" >
+            </div>
+            <button class="blue-back" onclick="addNewInput()">Add New Field</button>
+    
+        </div>
+        
+        <div class="add-select-container">
+            <button class="green-back" onclick="createSelect()">Add the options to Select BOX</button>
+            <div id="select-container"></div>
+        </div> 
+        
+    </div>
+    <script>   
+        function addNewInput(){
+            const elements = document.getElementsByClassName('list-options');
+            let innerH = "";
+            for (let index = 0; index < elements.length; index++) {
+                const element = elements[index];
+                innerH += '<input type="text" class="list-options" value="'+ elements[index].value +'" placeholder="enter value here" >';
+            }
+
+            innerH += '<input type="text" class="list-options" value="" placeholder="enter value here" >';
+            document.getElementById('select-homework-options').innerHTML = innerH;
+        }
+        function createSelect(){
+            const elements = document.getElementsByClassName('list-options');
+            let innerH = '<select>'
+            
+            for (let index = 0; index < elements.length; index++) {
+                const element = elements[index];
+                innerH += '<option value="'+ elements[index].value + '">'+ elements[index].value +'</option>';
+            }
+
+            innerH += '</select>'
+            document.getElementById('select-container').innerHTML = innerH
+        }
+    </script>
+    
+
+    
+    
+    <!-- <input type="text" id="text-name">
+
+    <button onclick="typeMyName('Noor')">Type my first name</button>
+    <button onclick="typeMyName('Totah')">Type my last name</button>
+    <button onclick="typeMyName('Noor Totah')">Type my full name</button> -->
+
+    
+</body>
+</html>
