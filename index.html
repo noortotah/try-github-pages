@@ -7,70 +7,7 @@
 </head>
 <body>
     
-    <input type="text" placeholder="Enter Number" id="number">
-    <button onclick="displayMultipleTable()"> Find its Multiplication table </button>
-    <div id="multiplication-table">
-        Add Here
-    </div>
-
-    <style>
-        table, td {
-            border: 1px solid #eee;
-        }
-        td {
-            text-align: center;
-            padding: 5px;
-            font-size: 1rem;
-        }
-    </style>
-    <script>
-        
-        function displayMultipleTable(){
-            const num = document.getElementById('number').value;
-            if(num != "" && num !== undefined){
-                document.getElementById('multiplication-table').innerHTML = "";
-                let innerH = "<table>";
-                
-                    innerH += "<tr>";
-                for (let index = 0; index <= num; index++) {
-                    
-                    if(index) {
-                        innerH += "<td>"+ index + "</td>";
-                    }else{
-                        innerH += "<td></td>";
-                    }
-                    
-                }
-                innerH += "</tr>";
-                for (let index = 1; index <= 10; index++) {
-                    innerH += "<tr>";
-                    innerH +="<td>"+ index +"</td>"
-                   for (let j = 1; j <= num ; j++) {
-                        innerH += '<td>'
-                             + j + ' * ' + index + ' = ' 
-                            + j*index
-                            +'</td>';
-
-                   } 
-                   innerH += "<tr>"
-                   
-                }
-                innerH += '</table>';
-                document.getElementById('multiplication-table').innerHTML = innerH;
-
-            }
-            
-        }
-        
-
-
-        function DisplaySelectBox(){
-
-        }
-    </script>
-
-    </hr>
-
+   <a href="/mutliplication.html">Go To multiplication table</a>
 
     <style>
         input {
